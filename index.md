@@ -7,4 +7,4 @@
 #
 layout: home
 ---
-New Post, Tips and Tutorils 
+## New Post, Tips and Tutorils 
