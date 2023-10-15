@@ -6,8 +6,8 @@ author:
 # The `>` after `description:` means to ignore line-breaks until next key.
 # If you want to omit the line-break after the end of text, use `>-` instead.
 description: >
- Computational technologies need to be shared and well documented. In these ways, scientists
- and engineers can achive their goals via the help from built tools.   
+ Computational technologies need to be shared and well documented. 
+ In this way, scientists and engineers can achieve their goals via the legacies and supports from built tools.   
 
 # Build settings
 

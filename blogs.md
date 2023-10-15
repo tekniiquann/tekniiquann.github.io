@@ -4,4 +4,4 @@ title: Blogs
 permalink: /blogs/
 ---
 
-There should be list of my posts.
+## There should be list of my posts.
