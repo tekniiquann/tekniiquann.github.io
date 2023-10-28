@@ -4,8 +4,9 @@ title: Blogs
 permalink: /blogs/
 ---
 
+
 This page categorize tech blogs, articles and tutorials according to their topics. The common topics this website will involving are
-## Contents
+##
  - shell Script &mdash; "If there is shell, there is a way."
  - C/C++ &mdash; First option for modern HPC.
  - CUDA, ROCm/HIP &mdash; GPU accelerations and the kernel languages.
@@ -16,25 +17,25 @@ This page categorize tech blogs, articles and tutorials according to their topic
 
 
 
- ## Shell Script
+## Shell Script
     ...
 
 
- ## C/C++
+## C/C++
     ...
 
 
- ## CUDA, ROCm/HIP
+## CUDA, ROCm/HIP
     ...
 
 
- ## Compilers
+## Compilers
     ...
 
 
- ## Paraview and Insitu visualization
+## Paraview and Insitu visualization
     ...
 
 
- ## Interesting News
+## Interesting News
     ...  
