@@ -17,7 +17,7 @@ This page categorize tech blogs, articles and tutorials according to their topic
 
 
 
-### [Shell Script](./shell_script.md)
+### [Shell Script](./blogs_pages/shell_script.md)
 <p>
 One of greatest innovations among UNIX/Linux is programable shell.A functional shell script always makes simple tasks simple and hard tasks simpler.
 </p>  
