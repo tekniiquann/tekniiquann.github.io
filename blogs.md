@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Blogs
+title: Blogs & Articles
 permalink: /blogs/
 ---
 
@@ -23,36 +23,36 @@ One of greatest innovations among UNIX/Linux is programable shell.A functional s
 </p>  
 
 
-### C/C++
+### [C/C++](./blogs_pages/c_cpp.md)
 <p>
 The language family, which high performance computations require. Though memory security of C/C++ is always under debated, most of developers will keep using it because its efficiency, abundant frameworks and GPU acceleration supports.
 </p>
 
 
-### CUDA, ROCm/HIP
+### [CUDA, ROCm/HIP](./blogs_pages/CUDA_ROCm-HIP.md)
 <p>
 Two mainstream libs of GPU accelerations provided by Nvidia and AMD. They are so-called kernel languages, which means acceleration is done by lunch kernel codes on GPU card's Stream Multiprocessors (SMs).
 </p>
 
 
-### Compilers
+### [Compilers](./blogs_pages/Compilers.md)
 <p>
 À simple and at same time, complicated topic. In most case, compilations are done by either gcc or LLVM based compilers. However, given the rapidly renewed standards of C++, even figuring out which version of g++ is getting complicated. In additional, hardware vendors also provide their compliers to user e.g., nvcc, hpicc, aocc etc.
 </p>
 
 
-### Paraview and Insitu visualization
+### [Paraview and Insitu visualization](./blogs_pages/Paraview_insitu.md)
 <p>
 Real powerful and revolutional HPC visualization tool kits. With the help of Paraview and insitu, messy csv text data sheets or slow python post-processing scripts will slowly out of your scope.
 </p>
 
-### github.io and Jekyll
+### [github.io and Jekyll](./blogs_pages/github.io_jekyll.md)
 <p>
 A free website building platform provided by github, plenty of developers are using it include my self. Jekyll is backend framework of this service. It's worth that gitlab also provide very similar service called gitlab page.
 </p>
 
 
-### Interesting News
+### [Interesting News](./blogs_pages/Interesting_News.md)
 <p>
 I'm a reader of Phoronix and Hackers News. These news let me know stages, news and issues about both software libraries and hardwares. For example, newly discovered vulnerabilities of Xorg rooted back to 1980s. Or benchmark of Raspberry Pi 5 against pi 4.
 </p> 
