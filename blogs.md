@@ -18,41 +18,41 @@ This page categorize tech blogs, articles and tutorials according to their topic
 
 
 ### Shell Script
-    ```text
-    One of greatest innovations among UNIX/Linux is programable shell. A functional shell script always makes simple tasks simple and hard tasks simpler.
-    ```  
+```text
+One of greatest innovations among UNIX/Linux is programable shell.\\ A functional shell script always makes simple tasks simple and hard tasks simpler.
+```  
 
 
 ### C/C++
-    ```text
-    The language family, which high performance computations require. Though memory security of C/C++ is always under debated, most of developers will keep using it because its efficiency, abundant frameworks and GPU acceleration supports.
-    ```
+```text
+The language family, which high performance computations require. \\ Though memory security of C/C++ is always under debated, most of developers will keep using it because its efficiency, abundant frameworks and GPU acceleration supports.
+```
 
 
 ### CUDA, ROCm/HIP
-    ```text
-    Two mainstream libs of GPU accelerations provided by Nvidia and AMD. They are so-called kernel languages, which means acceleration is done by lunch kernel codes on GPU card's Stream Multiprocessors (SMs).
-    ```
+```text
+Two mainstream libs of GPU accelerations provided by Nvidia and AMD. They are so-called kernel languages, which means acceleration is done by lunch kernel codes on GPU card's Stream Multiprocessors (SMs).
+```
 
 
 ### Compilers
-    ```text
-    À simple and at same time, complicated topic. In most case, compilations are done by either gcc or LLVM based compilers. However, given the rapidly renewed standards of C++, even figuring out which version of g++ is getting complicated. In additional, hardware vendors also provide their compliers to user e.g., nvcc, hpicc, aocc etc.
-    ```
+```text
+À simple and at same time, complicated topic. In most case, compilations are done by either gcc or LLVM based compilers. However, given the rapidly renewed standards of C++, even figuring out which version of g++ is getting complicated. In additional, hardware vendors also provide their compliers to user e.g., nvcc, hpicc, aocc etc.
+```
 
 
 ### Paraview and Insitu visualization
-    ```text
-    Real powerful and revolutional HPC visualization tool kits. With the help of Paraview and insitu, messy csv text data sheets or slow python post-processing scripts will slowly out of your scope.
-    ```
+```text
+Real powerful and revolutional HPC visualization tool kits. With the help of Paraview and insitu, messy csv text data sheets or slow python post-processing scripts will slowly out of your scope.
+```
 
 ### github.io and Jekyll
-    ```text
-    A free website building platform provided by github, plenty of developers are using it include my self. Jekyll is backend framework of this service. It's worth that gitlab also provide very similar service called gitlab page.
-    ```
+```text
+A free website building platform provided by github, plenty of developers are using it include my self. Jekyll is backend framework of this service. It's worth that gitlab also provide very similar service called gitlab page.
+```
 
 
 ### Interesting News
-    ```text
-    I'm a reader of Phoronix and Hackers News. These news let me know stages, news and issues about both software libraries and hardwares. For example, newly discovered vulnerabilities of Xorg rooted back to 1980s.
-    ``` 
+```text
+I'm a reader of Phoronix and Hackers News. These news let me know stages, news and issues about both software libraries and hardwares. For example, newly discovered vulnerabilities of Xorg rooted back to 1980s.
+``` 
