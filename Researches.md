@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Researches
+title: My Researches
 permalink: /Researches/
 ---
 
