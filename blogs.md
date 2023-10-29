@@ -18,9 +18,9 @@ This page categorize tech blogs, articles and tutorials according to their topic
 
 
 ### Shell Script
-```text
+<p>
 One of greatest innovations among UNIX/Linux is programable shell.\\ A functional shell script always makes simple tasks simple and hard tasks simpler.
-```  
+</p>  
 
 
 ### C/C++
