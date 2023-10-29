@@ -17,7 +17,7 @@ This page categorize tech blogs, articles and tutorials according to their topic
 
 
 
-### Shell Script
+### [Shell Script](./shell_script.md)
 <p>
 One of greatest innovations among UNIX/Linux is programable shell.A functional shell script always makes simple tasks simple and hard tasks simpler.
 </p>  
@@ -53,6 +53,6 @@ A free website building platform provided by github, plenty of developers are us
 
 
 ### Interesting News
-```text
-I'm a reader of Phoronix and Hackers News. These news let me know stages, news and issues about both software libraries and hardwares. For example, newly discovered vulnerabilities of Xorg rooted back to 1980s.
-``` 
+<p>
+I'm a reader of Phoronix and Hackers News. These news let me know stages, news and issues about both software libraries and hardwares. For example, newly discovered vulnerabilities of Xorg rooted back to 1980s. Or benchmark of Raspberry Pi 5 against pi 4.
+</p> 
