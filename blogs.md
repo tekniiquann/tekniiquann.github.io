@@ -19,37 +19,37 @@ This page categorize tech blogs, articles and tutorials according to their topic
 
 ### Shell Script
 <p>
-One of greatest innovations among UNIX/Linux is programable shell.\\ A functional shell script always makes simple tasks simple and hard tasks simpler.
+One of greatest innovations among UNIX/Linux is programable shell.A functional shell script always makes simple tasks simple and hard tasks simpler.
 </p>  
 
 
 ### C/C++
-```text
-The language family, which high performance computations require. \\ Though memory security of C/C++ is always under debated, most of developers will keep using it because its efficiency, abundant frameworks and GPU acceleration supports.
-```
+<p>
+The language family, which high performance computations require. Though memory security of C/C++ is always under debated, most of developers will keep using it because its efficiency, abundant frameworks and GPU acceleration supports.
+</p>
 
 
 ### CUDA, ROCm/HIP
-```text
+<p>
 Two mainstream libs of GPU accelerations provided by Nvidia and AMD. They are so-called kernel languages, which means acceleration is done by lunch kernel codes on GPU card's Stream Multiprocessors (SMs).
-```
+</p>
 
 
 ### Compilers
-```text
+<p>
 À simple and at same time, complicated topic. In most case, compilations are done by either gcc or LLVM based compilers. However, given the rapidly renewed standards of C++, even figuring out which version of g++ is getting complicated. In additional, hardware vendors also provide their compliers to user e.g., nvcc, hpicc, aocc etc.
-```
+</p>
 
 
 ### Paraview and Insitu visualization
-```text
+<p>
 Real powerful and revolutional HPC visualization tool kits. With the help of Paraview and insitu, messy csv text data sheets or slow python post-processing scripts will slowly out of your scope.
-```
+</p>
 
 ### github.io and Jekyll
-```text
+<p>
 A free website building platform provided by github, plenty of developers are using it include my self. Jekyll is backend framework of this service. It's worth that gitlab also provide very similar service called gitlab page.
-```
+</p>
 
 
 ### Interesting News
