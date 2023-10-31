@@ -23,9 +23,9 @@ One of greatest innovations among UNIX/Linux is programable shell.A functional s
 </p>  
 
 
-### [C/C++](./blogs_pages/c_cpp.md)
+### [C/C++, Compilers](./blogs_pages/c_cpp_compiler.md)
 <p>
-The language family, which high performance computations require. Though memory security of C/C++ is always under debated, most of developers will keep using it because its efficiency, abundant frameworks and GPU acceleration supports.
+C/C++ is The Language Family, which high performance computations require. Though memory security of C/C++ is always under debated, most of developers will keep using it because its efficiency, abundant frameworks and GPU acceleration supports. In most case, daily compilations are done by either gcc or LLVM based compilers e.g., clang. However, given the rapidly renewed standards of C++, even figuring out which version of g++ is getting complicated. In additional, hardware vendors also provide their compliers to user e.g., nvcc, hpicc, aocc etc.
 </p>
 
 
@@ -34,12 +34,10 @@ The language family, which high performance computations require. Though memory 
 Two mainstream libs of GPU accelerations provided by Nvidia and AMD. They are so-called kernel languages, which means acceleration is done by lunch kernel codes on GPU card's Stream Multiprocessors (SMs).
 </p>
 
-
-### [Compilers](./blogs_pages/Compilers.md)
+<!---### [Compilers](./blogs_pages/Compilers.md)
 <p>
-À simple and at same time, complicated topic. In most case, compilations are done by either gcc or LLVM based compilers. However, given the rapidly renewed standards of C++, even figuring out which version of g++ is getting complicated. In additional, hardware vendors also provide their compliers to user e.g., nvcc, hpicc, aocc etc.
 </p>
-
+--->
 
 ### [Paraview and Insitu visualization](./blogs_pages/Paraview_insitu.md)
 <p>
