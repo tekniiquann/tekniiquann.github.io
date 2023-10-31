@@ -35,6 +35,9 @@ layout: base
           {{ post.excerpt }}
         {%- endif -%}
       </li>
+      {%- if index == 3 -%}
+        {% break %}         
+      {%- endif -%}
       {%- endfor -%}
     </ul>
 
