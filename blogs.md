@@ -11,14 +11,14 @@ This page categorize tech blogs, articles and tutorials according to their topic
  - `C/C++, Compilers` &mdash; Languages for modern HPC; gcc/g++, LLVM/Clang, may be overlap with nvcc and hipcc.
  - `CUDA, ROCm/HIP` &mdash; GPU accelerations and the kernel languages.
  - `Paraview and insitu Visualization` &mdash; insitu post-processing technologies.
- - `github.io and Jekyll` &mdash; Most popular static website service
+ - `github.io and Jekyll` &mdash; Most popular static website service.
  - `Tech news which are generally interested`. &mdash; News from Phoronix, Hackers News.
 
 
 
-### [Shell Script](./blogs_pages/shell_script.md)
+### [Shell Script and OSs](./blogs_pages/shell_script.md)
 <p>
-One of greatest innovations among UNIX/Linux is programable shell.A functional shell script always makes simple tasks simple and hard tasks simpler.
+One of greatest innovations among UNIX/Linux is programable shell.A functional shell script always makes simple tasks simple and hard tasks simpler. Meanwhile, Plenty of UNIX-like OS distros including BSD and Linux have been released and iterated many generations. It's helpful to discuss them and document troubleshooting.
 </p>  
 
 
