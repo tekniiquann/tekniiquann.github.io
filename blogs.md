@@ -7,9 +7,9 @@ permalink: /blogs/
 
 This page categorize tech blogs, articles and tutorials according to their topics. The common topics this website will involving are
 ##
- - `shell Script` &mdash; "If there is shell, there is a way."
+ - `shell Script & OS` &mdash; "If there is shell, there is a way."
  - `C/C++, Compilers` &mdash; Languages for modern HPC; gcc/g++, LLVM/Clang, may be overlap with nvcc and hipcc.
- - `CUDA, ROCm/HIP` &mdash; GPU accelerations and the kernel languages.
+ - `CUDA, ROCm/HIP, Kernel Language` &mdash; GPU accelerations and the kernel languages.
  - `Paraview and insitu Visualization` &mdash; insitu post-processing technologies.
  - `github.io and Jekyll` &mdash; Most popular static website service.
  - `Tech news which are generally interested`. &mdash; News from Phoronix, Hackers News.
@@ -28,7 +28,7 @@ C/C++ is The Language Family, which high performance computations require. Thoug
 </p>
 
 
-### [CUDA, ROCm/HIP](./blogs_pages/CUDA_ROCm-HIP.md)
+### [CUDA, ROCm/HIP, Kernel Language](./blogs_pages/CUDA_ROCm-HIP.md)
 <p>
 Two mainstream libs of GPU accelerations provided by Nvidia and AMD. They are so-called kernel languages, which means acceleration is done by lunch kernel codes on GPU card's Stream Multiprocessors (SMs).
 </p>
