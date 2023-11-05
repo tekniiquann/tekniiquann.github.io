@@ -8,4 +8,4 @@ permalink: /blogs/github.io_jekyll/
 
 ---
 
-[Set up github.io website](./_posts/2023-10-16-set-up-github-page.md) 
+[Set up github.io website](/_posts/2023-10-16-set-up-github-page.md) 
