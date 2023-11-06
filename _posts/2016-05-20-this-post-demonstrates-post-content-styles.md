@@ -1,5 +1,6 @@
 ---
 layout: post
+short_name: ted
 title: "This post demonstrates post content styles"
 categories: junk
 author:
