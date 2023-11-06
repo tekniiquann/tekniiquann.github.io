@@ -9,6 +9,10 @@ description: >
  Computational technologies need to be shared and well documented. 
  In this way, scientists and engineers can achieve their goals via the legacies and supports from built tools.   
 
+collections:
+  blogs_pages:
+    output: true 
+
 # Build settings
 
 theme: minima
