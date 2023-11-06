@@ -10,7 +10,7 @@ description: >
  In this way, scientists and engineers can achieve their goals via the legacies and supports from built tools.   
 
 collections:
-  blogs_pages:
+  authors:
     output: true 
 
 # Build settings
