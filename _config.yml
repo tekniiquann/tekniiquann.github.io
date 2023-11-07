@@ -12,6 +12,8 @@ description: >
 collections:
   authors:
     output: true 
+  BlogsPages:
+    output: true    
 
 # Build settings
 
