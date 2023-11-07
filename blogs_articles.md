@@ -5,7 +5,7 @@ title: Blogs & Articles
 
 
 This page categorize tech blogs, articles and tutorials according to their topics. The common topics this website will involving are
-##
+#
  - `shell Script & OS` &mdash; "If there is shell, there is a way."
  - `C/C++, Compilers` &mdash; Languages for modern HPC; gcc/g++, LLVM/Clang, may be overlap with nvcc and hipcc.
  - `CUDA, ROCm/HIP, Kernel Language` &mdash; GPU accelerations and the kernel languages.
