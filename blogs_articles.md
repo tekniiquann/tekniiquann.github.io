@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Blogs & Articles
-permalink: /blogs/
 ---
 
 
