@@ -14,7 +14,7 @@ This page categorize tech blogs, articles and tutorials according to their topic
  - `Tech news which are generally interested`. &mdash; News from Phoronix, Hackers News.
 
 <ul>
-  {% for category in site.blogs_pages %}
+  {% for category in site.BlogsPages %}
     <li>
       <h2><a href="{{ category.url }}">{{ category.categories }}</a></h2>
       <h3>{{ category.description }}</h3>
