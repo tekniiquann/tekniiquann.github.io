@@ -1,6 +1,6 @@
 ---
 layout: page
-categories: github.io Liquid and Jekyll
+name: github.io Liquid and Jekyll
 description: A free website building platform provided by github, plenty of developers are using it include my self. Jekyll is backend framework of this service. It's worth that gitlab also provide very similar service called gitlab page.
 ---
 
