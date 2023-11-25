@@ -1,6 +1,6 @@
 ---
 layout: post
-categories short_name: githubio_jekyll
+categories_short_name: githubio_jekyll
 meta: "github.io"
 ---
 

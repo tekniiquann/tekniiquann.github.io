@@ -13,7 +13,7 @@ description: A free website building platform provided by github, plenty of deve
 ---
 
 <ul>
-  {% assign filtered_posts = site.posts | where: 'categories short_name', page.short_name %}
+  {% assign filtered_posts = site.posts | where: 'categories_short_name', page.short_name %}
   {% for post in filtered_posts %}
     <li><a href="{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
