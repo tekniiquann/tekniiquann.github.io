@@ -59,11 +59,22 @@ layout: base
       </div>
     {%- endif %}
 
-    <h4>
+    <!---<h4>
       <a href="./blogs/">
         See More Blogs & Articles
       </a>
-    </h4>
+    </h4>--->
+    <ul>
+      <!---{% assign filtered_posts = site.pages | where: 'githubio_jekyll', page.short_name %}--->
+      {% for page in site.pages %}
+         {%- if page.short_name == "Blogs_Pages" -%}
+          <li>
+           <h4><a href="{{ page.url }}"> See More Blogs & Articles </a></h4>
+          </li>
+         {%- endif -%}
+      {% endfor %}
+    </ul>
+    
 
   {%- endif -%}
 
