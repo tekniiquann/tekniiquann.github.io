@@ -59,13 +59,7 @@ layout: base
       </div>
     {%- endif %}
 
-    <!---<h4>
-      <a href="./blogs/">
-        See More Blogs & Articles
-      </a>
-    </h4>--->
     <ul>
-      <!---{% assign filtered_posts = site.pages | where: 'githubio_jekyll', page.short_name %}--->
       {% for page in site.pages %}
          {%- if page.short_name == "Blogs_Pages" -%}
           <li>

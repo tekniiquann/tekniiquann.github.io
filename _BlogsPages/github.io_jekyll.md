@@ -18,4 +18,3 @@ description: A free website building platform provided by github, plenty of deve
   {% endfor %}
 </ul>
 
-<!---[Set up github.io website](/_posts/2023-10-16-set-up-github-page.md)---> 
