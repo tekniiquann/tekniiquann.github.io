@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Set up github.io website"
-categories: github.io_jeykll
+categories: githubio_jekyll
 meta: "github.io"
 ---
 
