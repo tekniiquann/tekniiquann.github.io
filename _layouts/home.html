@@ -66,17 +66,21 @@ layout: base
            <h4><a href="{{ page.url }}"> See More Blogs & Articles </a></h4>
           </li>
          {% elsif page.short_name == "About" %}
-         <li>
-           <h5><a href="{{ page.url }}"> Read about website's author </a></h5>
-         </li>
+          <li>
+           <h4><a href="{{ page.url }}"> Read about website's author </a></h4>
+          </li>
          {%- endif -%}
       {% endfor %}
     </ul>
 
     <div class="container">
       <div class="row">       
-          <i class="ai ai-sci-hub ai-2x"></i>
-          <i class="ai ai-scirate ai-2x"></i>
+          <a href="www.google.com">
+            <i class="ai ai-google-scholar ai-2x"></i> 
+          </a><!--ai-#x set the size -->
+          <a href="www.duckduckgo.com">
+            <i class="ai ai-orcid ai-2x"></i>
+          </a>
       </div>
     </div>
     
