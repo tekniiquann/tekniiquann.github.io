@@ -6,12 +6,15 @@ author:
 # The `>` after `description:` means to ignore line-breaks until next key.
 # If you want to omit the line-break after the end of text, use `>-` instead.
 description: >
- Computational technologies need to be shared and well documented. 
- In this way, scientists and engineers can achieve their goals via the legacies and supports from built tools.   
+ I'm documenting the computing technologies for HPC (high performance computation) on this site. 
+ I hope scientists and engineers can find solutions for their goal more easier via the documented software legacies and tools.
+ Around the edge of HPC ecosystem, I also would like to talk about tools, tips and news for desktop environment such as FOSS building and compilations.
 
+
+#collections:
+#  authors:
+#    output: true 
 collections:
-  authors:
-    output: true 
   BlogsPages:
     output: true    
 
