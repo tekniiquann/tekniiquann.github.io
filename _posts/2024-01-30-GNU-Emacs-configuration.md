@@ -36,11 +36,10 @@ This is all necessary setting for installing theme packages, you should launch E
 The installed packages will not automatically launched until you add loading command:
 ```text
 (load-theme 'ef-night :no-confirm)
-
 ```
 into `.emacs.d/init.el`. For more usage of , please check [EmacsWiki:elpa](https://www.emacswiki.org/emacs/ELPA) and [EmacsWiki:Melpa](https://www.emacswiki.org/emacs/MELPA).
 
-The following function implements the **bracket ** matching in GNU Emacs. This basic feature is missing from plain installation.
+The following function implements the **bracket** matching in GNU Emacs. This basic feature is missing from plain installation.
 ```text
 (global-set-key "%" 'match-paren)
 
@@ -53,7 +52,6 @@ The following function implements the **bracket ** matching in GNU Emacs. This b
 
 ;; show matched parenthesis
 (show-paren-mode 1)
-
 ```
 At this stage, our simple and necessary configuration of GNU Emacs has done. Restarting emacs, one should get a nicely colorized emacs. All the configurations motioned above work in same way both on HPC and desktop environments. 
 
