@@ -5,7 +5,7 @@ short_name: githubio_jekyll
 description: A free website building platform provided by github, plenty of developers are using it include my self. Jekyll is backend framework of this service. It's worth that gitlab also provide very similar service called gitlab page.
 ---
 
-<img src="/pictures/github-page.png" alt="centered image" width="300" height="auto"> 
+<img src="/pictures/github-page.png" alt="centered image" width="1500" height="auto"> 
 
 
 ---
