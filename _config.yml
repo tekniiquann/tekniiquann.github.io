@@ -10,6 +10,8 @@ description: >
  I hope scientists and engineers can find solutions for their goal more easier via the documented software legacies and tools.
  Around the edge of HPC ecosystem, I also would like to talk about tools, tips and news for desktop environment such as FOSS building and compilations.
 
+# turn on google-analytics
+google_analytics: "G-RHY4WEHMV7"
 
 #collections:
 #  authors:

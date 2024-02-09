@@ -6,8 +6,6 @@ description: A free website building platform provided by github, plenty of deve
 ---
 
 <img src="/pictures/github-page.png" alt="centered image" width="1500" height="auto"> 
-
-
 ---
 
 <ul>
