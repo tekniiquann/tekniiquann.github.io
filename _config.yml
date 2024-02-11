@@ -24,6 +24,8 @@ collections:
 
 theme: minima
 
+number_of_homepage_posts: 8
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
