@@ -10,4 +10,4 @@ as passed by the early success of 1980s, [UNIX war](https://en.wikipedia.org/wik
 
 The BSD I chose is [FreeBSD 13](https://www.freebsd.org/), simply because it is mainstream, with nice documentations and source code, and also a cool looking logo.
 
-- last time edited @11th. Feb. 2024
+- last time edited @11th. Feb. 2024 pigg cattt
