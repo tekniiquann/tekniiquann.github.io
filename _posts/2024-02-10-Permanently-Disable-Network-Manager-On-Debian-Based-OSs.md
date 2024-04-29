@@ -1,5 +1,6 @@
 ---
 layout: post
+title: "Permanently Disable Network Manager On Debian Based OS"
 categories_short_name: shell
 meta: "shell_and_OS"
 ---

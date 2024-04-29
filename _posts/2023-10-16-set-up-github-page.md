@@ -1,5 +1,6 @@
 ---
 layout: post
+title: "Set up GitHub Page"
 categories_short_name: githubio_jekyll
 meta: "github.io"
 ---

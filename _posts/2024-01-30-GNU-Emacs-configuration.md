@@ -1,5 +1,6 @@
 ---
 layout: post
+title: "GNU Emacs Configuration"
 categories_short_name: cc++_compilers
 meta: "cc++compilers"
 ---
