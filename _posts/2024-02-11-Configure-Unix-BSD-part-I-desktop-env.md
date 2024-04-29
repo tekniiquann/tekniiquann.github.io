@@ -1,5 +1,6 @@
 ---
 layout: post
+title: "Configuring FreeBSD 13.0 and UNIX"
 categories_short_name: shell
 meta: "shell_and_OS"
 ---
