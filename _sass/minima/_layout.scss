@@ -5,15 +5,15 @@
   border-top: 10px solid $border-color-03;
   border-bottom: 2px solid $border-color-01;
   min-height: $spacing-unit * 1.865/*1.865*/;
-  line-height: $base-line-height * $base-font-size * 3.5/*2.25*/;
+  line-height: $base-line-height * $base-font-size * 2.25;
 
   // Positioning context for the mobile navigation icon
   position: relative;
 }
 
 .site-title {
-  @include relative-font-size(2.5);
-  font-weight: 600;
+  @include relative-font-size(2.0);
+  font-weight: 400;
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left;
