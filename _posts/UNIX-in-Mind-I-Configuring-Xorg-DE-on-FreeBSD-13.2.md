@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Configuring FreeBSD 13.0 and UNIX"
+title: "UNIX in Mind I -- Configuring Xorg DE on FreeBSD 13.2 "
 categories_short_name: shell
 meta: "shell_and_OS"
 ---
