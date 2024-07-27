@@ -28,5 +28,9 @@ If you wish to use USB deriver/memstick image as I did, then plug USB driver int
 ```
 to write bootable file on USB driver, here the `/dev/daX` is device name, and should be checked out by `lsblk` or `ls -tl /dev` command. After bootable image is written down, reboot the computer and get into boot option session, and choose USB driver. In this stage, many machine requires boot hierarchy change.
 
-If the image is successfully loaded and no error pops up, 
+If the image is successfully loaded and no error pops up in boot process, we will get into installation session immediately. For processing correctly, one should follow the [installation instructions of FreeBSD HandBook](https://docs.freebsd.org/en/books/handbook/bsdinstall/#bsdinstall-start) and also the great demonstration provided by [DJ Ware](https://www.youtube.com/watch?v=O3G1v0BRjxs&list=PLWK00SLo2KcSf2X1DDZK6NS0dg_EJb9Ls). **Please don't forget add yourdelf as user with Wheel privilege**!
+
+
+
+
 - last time edited @27th. July. 2024
