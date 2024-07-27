@@ -19,14 +19,14 @@ The BSD I am using is [FreeBSD 13](https://www.freebsd.org/), simply because it 
 The differences between FreeBSD and common GNU/Linux distros show themselves at the very beginning stage of running OS --- the installation. The filesystem which FreeBSD uses is [Z FileSystem/ZFS](https://en.wikipedia.org/wiki/ZFS) or [UFS](https://en.wikipedia.org/wiki/Unix_File_System), while the default filesystem of GNU/Linux distros is [ext4/3](https://en.wikipedia.org/wiki/Ext4). The advance technologies which ZFS offers such as [zpool](https://docs.freebsd.org/en/books/handbook/zfs/#zfs-zpool-create) is not topic of this article, but one should at least know that the PC desktop FreeBSD system will be installed in one zpool if one just following the installation instructions from FreeBSD HandBook.
 
 Moving forward, we can simply follow the [installation instructions of FreeBSD HandBook](https://docs.freebsd.org/en/books/handbook/bsdinstall/#bsdinstall-start). Before real installation kicked off, we should prepare the bootable Installation Media,
-and download right version which matches your hardware is key e.g., don't try to put DVD image into USB driver image. 
+and download right version which matches your hardware is key e.g., don't try to put DVD image into USB driver. 
 The download instruction can be found from at [here](https://docs.freebsd.org/en/books/handbook/bsdinstall/#bsdinstall-installation-media).
 
 If you wish to use USB deriver/memstick image as I did, then plug USB driver into computer and **umount** it and run
 ```console
 ~$ dd if=FreeBSD-xx.x-RELEASE-amd64-memstick.img of=/dev/daX bs=1M conv=sync
 ```
-to write bootable file on USB driver, here the `/dev/daX` is device name, and should be checked out by `lsblk` or `ls -tl /dev` command. After bootable image is written down, reboot the computer and get into boot option session, and choose USB driver. In this stage, many machine requires boot hierarchy change.
+to write bootable file on USB driver, here the `/dev/daX` is device name, and should be checked out by `lsblk` or `ls -tl /dev` command. After bootable image is written down, reboot the computer and get into boot option session, and choose USB driver. In this stage, many machines requires boot hierarchy change.
 
 If the image is successfully loaded and no error pops up in boot process, we will get into installation session immediately. For processing correctly, one should follow the [installation instructions of FreeBSD HandBook](https://docs.freebsd.org/en/books/handbook/bsdinstall/#bsdinstall-start) and also the great demonstration provided by [DJ Ware](https://www.youtube.com/watch?v=O3G1v0BRjxs&list=PLWK00SLo2KcSf2X1DDZK6NS0dg_EJb9Ls). **Please don't forget add yourself as user with Video and Wheel privilege and pre-install `pkg`**!
 
@@ -44,6 +44,6 @@ The last command adds the graphic driver module to `/etc/rc.conf` file for boot-
 ```
 The last two commands turn on Data-Bus and Gnome Display management (GDB) during boot. After this succeeded, reboot and see the gnome login page. 
 
-See you in UNIX in Mind (II)
+See you in UNIX in Mind (II)!
 
 - last time edited @27th. July. 2024
