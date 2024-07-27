@@ -28,9 +28,22 @@ If you wish to use USB deriver/memstick image as I did, then plug USB driver int
 ```
 to write bootable file on USB driver, here the `/dev/daX` is device name, and should be checked out by `lsblk` or `ls -tl /dev` command. After bootable image is written down, reboot the computer and get into boot option session, and choose USB driver. In this stage, many machine requires boot hierarchy change.
 
-If the image is successfully loaded and no error pops up in boot process, we will get into installation session immediately. For processing correctly, one should follow the [installation instructions of FreeBSD HandBook](https://docs.freebsd.org/en/books/handbook/bsdinstall/#bsdinstall-start) and also the great demonstration provided by [DJ Ware](https://www.youtube.com/watch?v=O3G1v0BRjxs&list=PLWK00SLo2KcSf2X1DDZK6NS0dg_EJb9Ls). **Please don't forget add yourdelf as user with Wheel privilege**!
+If the image is successfully loaded and no error pops up in boot process, we will get into installation session immediately. For processing correctly, one should follow the [installation instructions of FreeBSD HandBook](https://docs.freebsd.org/en/books/handbook/bsdinstall/#bsdinstall-start) and also the great demonstration provided by [DJ Ware](https://www.youtube.com/watch?v=O3G1v0BRjxs&list=PLWK00SLo2KcSf2X1DDZK6NS0dg_EJb9Ls). **Please don't forget add yourself as user with Video and Wheel privilege and pre-install `pkg`**!
 
+After system reboot into a tty login screen, we can now install [display server](https://en.wikipedia.org/wiki/Windowing_system#Display_server_communications_protocols) and desktop environment. This stage is hardware-dependent. For a computer equipped with Nvidia or AMD graphic cards, the proper drivers must be installed and configured to be loaded when bootup. Here I use intel i915 driver, read [here](https://docs.freebsd.org/en/books/handbook/x11/#x-graphic-card-drivers) to see what's suitable for different cases.
+```console
+~# pkg install xorg 
+~# pkg install drm-kmod
+~# sysrc kld_list+=i915kms
+```
+The last command adds the graphic driver module to `/etc/rc.conf` file for boot-up auto loading. Next let's install the desktop environment (DE), here `Gnome` is used as example, for `KDE`, `Mate` and `xfce` etc, see [FreeBSD Handbook](https://docs.freebsd.org/en/books/handbook/desktop/#desktop-environments).
+```console
+~# pkg install gnome
+~# sysrc dbus_enable="YES"
+~# sysrc gdm_enable="YES"
+```
+The last two commands turn on Data-Bus and Gnome Display management (GDB) during boot. After this succeeded, reboot and see the gnome login page. 
 
-
+See you in UNIX in Mind (II)
 
 - last time edited @27th. July. 2024
