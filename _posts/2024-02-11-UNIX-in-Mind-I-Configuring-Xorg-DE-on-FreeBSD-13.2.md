@@ -44,6 +44,8 @@ The last command adds the graphic driver module to `/etc/rc.conf` file for boot-
 ```
 The last two commands turn on Data-Bus and Gnome Display management (GDB) during boot. After this succeeded, reboot and see the gnome login page. 
 
-See you in UNIX in Mind (II)!
+This is common routine of installing FreeBSD with DE-autoloading. However, this routine may not provide the freedom and controllability a geeky mind really wants. Let's say you are using Xorg and testing [Wayland compositor](https://en.wikipedia.org/wiki/Wayland_(protocol)) with different DEs, a heavy loading DE like gnome which is automatically loaded every time is NOT always what you wish to see especially when display server has crashed (and you actually can't see it at all after crashing). We need smooth access to the shell at any situation. Then we have to **make DE launch optional**. FreeBSD has counted this in its design.
+
+Check out more about this and see you in UNIX in Mind (II)!
 
 - last time edited @27th. July. 2024
