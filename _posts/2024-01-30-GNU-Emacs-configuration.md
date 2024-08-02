@@ -3,6 +3,7 @@ layout: post
 title: "GNU Emacs Configuration"
 categories_short_name: cc++_compilers
 meta: "cc++compilers"
+type: "publication"
 ---
 
 Though [Emacs](https://en.wikipedia.org/wiki/Emacs) family is considered as ancient and slowly dying-out text editors and programming softwares, the [GNU Emacs](https://en.wikipedia.org/wiki/GNU_Emacs) is still daily driving coding platform of plenty of users. I'm one of them, and [GNU Emacs](https://en.wikipedia.org/wiki/GNU_Emacs) is NOT some sort of unconvenient browser for me. 

@@ -3,6 +3,7 @@ layout: post
 title: "UNIX in Mind (I) -- Configuring Xorg DE on FreeBSD 13.2 "
 categories_short_name: shell
 meta: "shell_and_OS"
+type: "publication"
 ---
 
 The historically impacts of [UNIX](https://en.wikipedia.org/wiki/Unix) on computer science and computer technologies are going forever along every hardware ruining UNIX-like system. 

@@ -3,6 +3,7 @@ layout: post
 title: "Set up GitHub Page"
 categories_short_name: githubio_jekyll
 meta: "github.io"
+type: "publication"
 ---
 
 Building up ones own github page could be trouble-ish if some details of processing are already forgotten though Github has released github.io service since 2008. This blog post will provide few significant links from github about this topic and recode few common trouble-sources. github page is wildly used for personal website, software documentations. Many big projects actually depend upon github page to release and document their softwares.

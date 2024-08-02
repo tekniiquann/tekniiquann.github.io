@@ -3,6 +3,7 @@ layout: post
 title: "Permanently Disable Network Manager On Debian Based OS"
 categories_short_name: shell
 meta: "shell_and_OS"
+type: "publication"
 ---
 
 There is a glitch caused by [Systemd](https://en.wikipedia.org/wiki/Systemd) if not many, on my [Debian](https://wiki.debian.org/) 11 desktop. 
