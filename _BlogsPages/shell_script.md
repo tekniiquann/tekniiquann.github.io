@@ -10,6 +10,10 @@ description: One of greatest innovations among UNIX/Linux is programable shell.A
 <ul>
   {% assign filtered_posts = site.posts | where: 'categories_short_name', page.short_name %}
   {% for post in filtered_posts %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {%- if post.type != "Draft" -%}
+          <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+    {%- endif -%}
   {% endfor %}
 </ul>

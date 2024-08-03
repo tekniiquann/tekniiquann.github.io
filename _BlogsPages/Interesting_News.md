@@ -10,7 +10,11 @@ description: I'm a reader of Phoronix and Hackers News. These news let me know s
 <ul>
   {% assign filtered_posts = site.posts | where: 'categories_short_name', page.short_name %}
   {% for post in filtered_posts %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {%- if post.type != "Draft" -%}
+          <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+    {%- endif -%}
   {% endfor %}
 </ul>
  
