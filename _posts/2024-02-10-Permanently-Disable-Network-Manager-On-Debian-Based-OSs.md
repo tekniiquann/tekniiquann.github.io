@@ -21,7 +21,7 @@ As the answer of [this StackExcange](https://askubuntu.com/questions/1091653/how
 ~# systemctl stop network-manager.service
 {% endhighlight %}
 to stop the current service, and then run these commands
-{% hightlight console %}
+{% highlight console %}
 ~# systemctl disable NetworkManager.service
 ~# systemctl disable NetworkManager-wait-online.service
 ~# systemctl disable NetworkManager-dispatcher.service
