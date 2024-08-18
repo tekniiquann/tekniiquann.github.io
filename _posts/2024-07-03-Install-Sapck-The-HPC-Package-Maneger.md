@@ -16,13 +16,13 @@ In this short article, I want to talk about how to fast install Spack from [Spac
 
 Installation and environment configurations are quite easy. First, `git clone` the repo in your preferred way. Either 
 {% highlight console %}
-$ git clone https://github.com/spack/spack.git ~/spack && cd ~/spack
-$ git checkout releases/v0.20 # newest version is releases/v0.22 when this is written
+~$ git clone https://github.com/spack/spack.git ~/spack && cd ~/spack
+~$ git checkout releases/v0.20 # newest version is releases/v0.22 when this is written
 {% endhighlight %}
 or 
 {% highlight console %}
-$ git clone --depth=100 --branch=releases/v0.20 https://github.com/spack/spack.git ~/spack
-$ cd ~/spack
+~$ git clone --depth=100 --branch=releases/v0.20 https://github.com/spack/spack.git ~/spack
+~$ cd ~/spack
 {% endhighlight %}
 would fetch [spack github repo](https://github.com/spack/spack) and checkout `releases/v0.20` branch in `/home/$USER/spack` folder.
 

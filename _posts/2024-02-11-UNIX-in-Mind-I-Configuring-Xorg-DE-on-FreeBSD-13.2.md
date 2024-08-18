@@ -24,25 +24,25 @@ and download right version which matches your hardware is key e.g., don't try to
 The download instruction can be found from at [here](https://docs.freebsd.org/en/books/handbook/bsdinstall/#bsdinstall-installation-media).
 
 If you wish to use USB deriver/memstick image as I did, then plug USB driver into computer and **umount** it and run
-```console
+{% highlight console %}
 ~$ dd if=FreeBSD-xx.x-RELEASE-amd64-memstick.img of=/dev/daX bs=1M conv=sync
-```
+{% endhighlight %}
 to write bootable file on USB driver, here the `/dev/daX` is device name, and should be checked out by `lsblk` or `ls -tl /dev` command. After bootable image is written down, reboot the computer and get into boot option session, and choose USB driver. In this stage, many machines requires boot hierarchy change.
 
 If the image is successfully loaded and no error pops up in boot process, we will get into installation session immediately. For processing correctly, one should follow the [installation instructions of FreeBSD HandBook](https://docs.freebsd.org/en/books/handbook/bsdinstall/#bsdinstall-start) and also the great demonstration provided by [DJ Ware](https://www.youtube.com/watch?v=O3G1v0BRjxs&list=PLWK00SLo2KcSf2X1DDZK6NS0dg_EJb9Ls). **Please don't forget add yourself as user with Video and Wheel privilege and pre-install `pkg`**!
 
 After system reboot into a tty login screen, we can now install [display server](https://en.wikipedia.org/wiki/Windowing_system#Display_server_communications_protocols) and desktop environment. This stage is hardware-dependent. For a computer equipped with Nvidia or AMD graphic cards, the proper drivers must be installed and configured to be loaded when bootup. Here I use intel i915 driver, read [here](https://docs.freebsd.org/en/books/handbook/x11/#x-graphic-card-drivers) to see what's suitable for different cases.
-```console
+{% highlight console %}
 ~# pkg install xorg 
 ~# pkg install drm-kmod
 ~# sysrc kld_list+=i915kms
-```
+{% endhighlight %}
 The last command adds the graphic driver module to `/etc/rc.conf` file for boot-up auto loading. Next let's install the desktop environment (DE), here `Gnome` is used as example, for `KDE`, `Mate` and `xfce` etc, see [FreeBSD Handbook](https://docs.freebsd.org/en/books/handbook/desktop/#desktop-environments).
-```console
+{% highlight console %}
 ~# pkg install gnome
 ~# sysrc dbus_enable="YES"
 ~# sysrc gdm_enable="YES"
-```
+{% endhighlight %}
 The last two commands turn on Data-Bus and Gnome Display management (GDB) during boot. After this succeeded, reboot and see the gnome login page. 
 
 This is common routine of installing FreeBSD with DE-autoloading. However, this routine may not provide the freedom and controllability a geeky mind really wants. Let's say you are using Xorg and testing [Wayland compositor](https://en.wikipedia.org/wiki/Wayland_(protocol)) with different DEs, a heavy loading DE like gnome which is automatically loaded every time is NOT always what you wish to see especially when display server has crashed (and you actually can't see it at all after crashing). We need smooth access to the shell at any situation. Then we have to **make DE launch optional**. FreeBSD has counted this in its design.
