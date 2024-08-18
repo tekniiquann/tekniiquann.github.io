@@ -3,7 +3,7 @@ layout: post
 title: "How To Install Spack -- The HPC Package Manager"
 categories_short_name: shell
 meta: "shell_and_OS"
-type: "Drafts"
+type: "Draft"
 ---
 
 [Spack](https://spack.io/), the supercomputer tool for HPC libraries and dependencies building, has been around quite a while in HPC community and almost appear on any big machine. It offers extremely comprehensive control of package building, such as the versions of target package, versions of dependencies of target package, compilers and their version. 
@@ -82,3 +82,5 @@ Run Dependencies:
     java  pkgconfig
 
 {% endhighlight %}
+
+- last time edited @18th. Aug. 2024
