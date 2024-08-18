@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How To Install Spack -- The HPC Package Manager"
+title: "How To Install and Configure Spack -- The HPC Package Manager"
 categories_short_name: shell
 meta: "shell_and_OS"
 type: "Draft"
@@ -10,11 +10,11 @@ type: "Draft"
 
 One of many significant features, which make Spack such handy tool for resolving HPC toolchains, is building configurations. [Spec variants](https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies) are the kernel concepts of this feature. `Spec variants` of spack package cover mostly the building configuration flags of [CMake](https://cmake.org/) or [Make](https://en.wikipedia.org/wiki/Make_(software)), the compiler flags and the linker flags. They are the ports of building configuration of softwares.
 
-Beside appearing frequently on cluster of supercomputing nodes, Spack also works well on workstations and laptops. This makes deployment, managements and usages of HPC toolchains much more easier than it's used to be. For HPC developers, making this task easy is really life-enjoyment. 
+Beside appearing frequently on cluster of supercomputing nodes, Spack also works well on workstations and laptops. This makes deployment, managements and usages of HPC toolchains much more easier than it's used to be. For HPC developers, making this task easy is really life enjoyment. 
 
-In this short article, I want to talk about how to install Spack on UNIX-like operating system such as Debian/Ubuntu linux, as well as the simple necessary configuration to make spack ready to go on daily drive. The resource I would like to quote here is [spack documentation](https://spack.readthedocs.io/en/latest/getting_started.html#installation).
+In this short article, I want to talk about how to fast install Spack from [Spack Github repo](https://github.com/spack/spack.git) on UNIX-like operating system such as FreeBSD and Debian/Ubuntu linux. I also will show a simple and necessary configuration to make Spack ready to go on daily usage. The resource I would like to quote here is [Spack documentation](https://spack.readthedocs.io/en/latest/getting_started.html#installation).
 
-Installation and environment configurations are quite easily. First, `git clone` the repo in your preferred way. Either 
+Installation and environment configurations are quite easy. First, `git clone` the repo in your preferred way. Either 
 {% highlight console %}
 $ git clone https://github.com/spack/spack.git ~/spack && cd ~/spack
 $ git checkout releases/v0.20 # newest version is releases/v0.22 when this is written
@@ -55,15 +55,7 @@ Homepage: https://portal.hdfgroup.org
 
 Preferred version:  
     1.14.1-2         https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.14/hdf5-1.14.1-2/src/hdf5-1.14.1-2.tar.gz
-
-Safe versions:  
-    develop-1.15     [git] https://github.com/HDFGroup/hdf5.git on branch develop
     ...
-    1.14.1-2         https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.14/hdf5-1.14.1-2/src/hdf5-1.14.1-2.tar.gz
-    ...
-Deprecated versions:  
-    None
-
 Variants:
     Name [Default]          When                              Allowed values          Description
     ====================    ==============================    ====================    ============================================

@@ -36,9 +36,9 @@ layout: base
               {{ post.excerpt }}
             {%- endif -%}
           </li>
-          {%- if forloop.index == site.number_of_homepage_posts -%}
-            {%- break -%}         
-          {%- endif -%}
+        {%- endif -%}
+        {%- if forloop.index > site.number_of_homepage_posts -%}
+          {%- break -%}         
         {%- endif -%}
       {%- endfor -%}
     </ul>
