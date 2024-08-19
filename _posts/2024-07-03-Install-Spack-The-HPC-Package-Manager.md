@@ -12,7 +12,7 @@ One of many significant features, which make Spack such handy tool for resolving
 
 Beside appearing frequently on cluster of supercomputing nodes, Spack also works well on workstations and laptops. This makes deployment, managements and usages of HPC toolchains much more easier than it's used to be. For HPC developers, making this task easy is really life enjoyment. 
 
-In this short article, I want to talk about how to fast install Spack from [Spack Github repo](https://github.com/spack/spack.git) on UNIX-like operating system such as FreeBSD and Debian/Ubuntu linux. I also will show a simple and necessary configuration to make Spack ready to go on daily usage. The resource I would like to quote here is [Spack documentation](https://spack.readthedocs.io/en/latest/getting_started.html#installation).
+In this short article, I want to talk about how to fast install Spack from [Spack Github repo](https://github.com/spack/spack.git) on UNIX-like operating system such as FreeBSD and GNU/Linux. I also will show a simple and necessary configuration to make Spack ready to go on daily usage. The resource I would like to quote here is [Spack documentation](https://spack.readthedocs.io/en/latest/getting_started.html#installation).
 
 Installation and environment configurations are quite easy. First, `git clone` the repo in your preferred way. Either 
 {% highlight console %}
