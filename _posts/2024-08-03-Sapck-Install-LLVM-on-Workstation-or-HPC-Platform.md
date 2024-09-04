@@ -39,4 +39,12 @@ Variants:
     generator [ninja]              [, build_system=cmake]            ninja                   the build system generator to use
 ...
 {% endhighlight %}
-We can see the default building configuration system is [CMake](https://cmake.org) and building tool is [ninja](https://ninja-build.org) if CMake is used.
+We can see the default building configuration system is [CMake](https://cmake.org) and building tool is [ninja](https://ninja-build.org) if CMake is used. The default `build_type` is `Release`, which usually exactly is what we as an user want. We can also see `cuda` building is also on building option list, while this building option surely will push the building time even longer if it is turned on.
+Next, let's prepare the building by checking out what's Spack going to do, or what dependencies Spack plans to build and install. In Spack lingo, we should check out `spec` to get these information.
+{% highlight console %} 
+~$ spack spec -I llvm @17.0.6 %gcc@12.2.0
+{% endhighlight %}
+`%` is the symbol for making out compiler-to-use for building on operating system. While `@` symbol marks out the version of every library or tool involved. `@17.0.6` is version of LLVM I want to build, and `@12.2.0` marks the version of `gcc` I wish Spack to use. Compiler with given version must be executable on living system. If one wants to build `flang`, just assign `true` to `flang` after compiler specifier 
+{% highlight console %} 
+~$ spack spec -I llvm @17.0.6 %gcc@12.2.0 flang=ture
+{% endhighlight %}
