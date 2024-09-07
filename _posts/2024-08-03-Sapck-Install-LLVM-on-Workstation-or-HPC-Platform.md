@@ -116,7 +116,7 @@ packages using `CMake` or `make`. The number of parallel CPU threads is `16` if 
 by explicitly requiring `-j N`, which N is 4 in our example.
 
 If you are not planing to get into rabbit hole of compatibility yet, or you just want a working LLVM for `AST` analysis or a newer version of `clang`, 
-{% highlight console%}
+{% highlight console %}
 ~$ spack --debug spec -I llvm @17.0.6 %clang@16.0.6
 ...
 ~$ spack install -j4 --verbose llvm @17.0.6 %clang@16.0.6
@@ -124,9 +124,14 @@ If you are not planing to get into rabbit hole of compatibility yet, or you just
 will show what you need to know before building similar with we have seen before. And then launch the building. Variant `cuda` is default be `false` and variant `targets` is default be `x86` in this `spec`. For an old Intel 4th generation `i5-4300U` CPU, this building takes about two hours if any of the dependencies has not been installed ever. In contract,
 This time is about 25 minutes on AMD `Zen3 EPYC 7003` CPU, thanks for the sixteen threads are automatically launched.
 
-The built packages locate under `opt/spack/` folder of cloned Spack repo. Try to run `spack find --path llvm` to check out the exact location. 
+The built packages locate under `opt/spack/` folder of cloned Spack repo. Try to run 
+{% highlight console %}
+~$ spack find --path llvm
+{% endhighlight %}
+to check out the exact location. 
 Under the install path, there are `bin` for LLVM excitable, such as `clang`, `llvm-*`, `include` for header files, and `lib` for library files. 
 One may still gets errors and crashing in building process, debugging the `spec` you provided is necessary if this unfortunately happened. 
-Stay tuning for next article about **features** and **configurations** with `yaml` files on Spack if you find this article helpful and want find more advanced features of Spack.
+
+Thank you for reading and stay tuning for next article about **features** and **configurations** with `yaml` files on Spack if you find this article helpful and want find more advanced features of Spack.
 
 - last time edited @29th. Oct. 2023
