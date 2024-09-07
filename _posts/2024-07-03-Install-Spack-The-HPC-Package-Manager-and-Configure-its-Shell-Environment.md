@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How To Install and Configure Spack -- The HPC Package Manager"
+title: "Install Spack -- The HPC Package Manager and Configure its Shell Environment"
 categories_short_name: shell
 meta: "shell_and_OS"
 type: "publication"
