@@ -8,7 +8,7 @@ type: "Draft"
 
 [LLVM project](https://llvm.org), started by [Chris Lattner](https://en.wikipedia.org/wiki/Chris_Lattner) at 21 years ago, has been evolved to ubiquitous corner stone of almost any modern projects. Popular languages [Rust](https://www.rust-lang.org) and [Julia](https://julialang.org), which feature different capabilities, are both heavily depend on LLVM for syntax analysis or binary generations (optimizations). However, getting our blue wyvern flying sometime needs a little bit more efforts, compiling and building LLVM from source is not same level task of a `apt install llvm`. 
 
-<img src="/pictures/llvm-spack.png" alt="centered image" width="1500" height="auto"> 
+<img src="/pictures/llvm-spack.png" alt="centered image" width="800" height="auto"> 
 
 The problem gets seriously worse when it comes to supercomputer or cluster platforms, because these platforms usually have fixed number allocations of files in project folders. As a result, pulling source tree of LLVM into project folders is likely imposable thanks for its 180000+ files. Developers always found themselves have no way to conduct a source building of LLVM though they could get this job done on their workstation. It will be very helpful if an universal building system could provide a routine to properly fetch the source tree of LLVM, and could be even better if this building system offers detailed building configurations. Here, come to **Spack**. 
 
@@ -49,7 +49,7 @@ Next, let's prepare the building by checking out what's Spack going to do, or wh
 {% highlight console %} 
 ~$ spack spec -I llvm @17.0.6 %clang@16.0.6
 {% endhighlight %}
-`%` is the symbol for making out compiler-to-use for building on operating system. While `@` symbol marks out the version of every library or tool involved. `@17.0.6` is version of LLVM I want to build in this example, and `@12.2.0` marks the version of `gcc` I wish Spack to use. Compiler with given version must be executable on living system. Try to run
+`%` is the symbol for marking out compiler-to-use on operating system. While `@` symbol marks out the version of every library or tool involved. `@17.0.6` is version of LLVM I want to build in this example, and `@12.2.0` marks the version of `clang` I wish Spack to use. Compiler with given version must be executable on operating system. Try to run
 {% highlight console %}
 ~$ spack compilers list 
 {% endhighlight %}
@@ -100,10 +100,10 @@ Concretized
 [+]      ^hwloc@2.9.1%gcc@12.2.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~oneapi-level-zero~opencl+pci~rocm build_system=autotools libs=shared,static arch=linux-debian12-haswell
 ...
 {% endhighlight %}
-These information are verbose messages of sources and toolchains resolving for the `spec` just provided, and information about dependencies which will be reused or installed freshly. Dependencies with `[+]` symbol in front are reused packages from previous Spack installations, while those with `[e]` are fetched from operating system. `cuda` with version `12.4` will be built if installation is launched with this `spec`. 
+These information are verbose messages of sources and toolchains resolved from the `spec` we just provided, and information about dependencies which will be reused or installed freshly. Dependencies with `[+]` symbol in front are reused packages from previous Spack installations, while those with `[e]` are fetched from operating system. `cuda` with version `12.4` will be built if installation is launched with this `spec`. 
 
 Option `--debug` is not necessary, but will be helpful when user has to deal with building errors. For developers, it's always good to see more details of processes than playing with black box. `^` in front of `cuda` marks the starting point of `spec`of CUDA building. Anything after this `^` symbol and before next `^` belongs to CUDA building configuration. One could specifies the version of CUDA, and also the compiler-in-use through same specifiers `%` and `@`. 
-`:` in `@12.0.0:17.0.6` of LLVM `spec` means any version between `12.0.0` and `17.0.6`. Similarly in the `spec` of CUDA, `@11.0.2:12.4.0` means any version between `11.0.2` and `12.4.0`.
+`:` symbol in `@12.0.0:17.0.6` of LLVM `spec` means any version between `12.0.0` and `17.0.6` will be fine. Similarly, in the `spec` of CUDA, `@11.0.2:12.4.0` means any version between `11.0.2` and `12.4.0` could be chosen.
 
 This type of practice is absolutely necessary when user has to resolve the compatibility issue between different complex libraries, like here LLVM and CUDA.
 The possible issues may rise from the un-compatible compilers, which different packages require for. Another common source of un-compatibility comes from different libraries, few of them may be just simply un-compatible with each others. The command line return from our command shows Spacks think LLVM version `14.0.6` has good compatibility with CUDA version `12.4` when they are both built with `Clang 16.0.6`.
@@ -113,11 +113,11 @@ At this stage, we have gathered all the knowledge for us to really build LLVM wi
 ~$ spack install -j4 --verbose llvm %clang@16.0.6 flang=true cuda=true cuda_arch=89 \ 
    ^cuda @11.0.2:12.4.0 %clang@16.0.6
 {% endhighlight %}
-to kick off the building with parallel compilations of for threads and building details i.e., `verbose`. Spack automatically supports parallel building for 
-packages using `CMake` or `make`. The number of parallel CPU threads is `16` if the hardware has these resource. However, this number can always be overridden
+to kick off the building with parallel compilations of threads and building `verbose`. Spack automatically supports parallel building for 
+packages using `CMake` or `make`. The number of parallel CPU threads is `16` if the hardware has these resources. However, this number can always be overridden
 by explicitly requiring `-j N`, which N is 4 in our example.
 
-If you are not planing to get into rabbit hole of compatibility yet, or you just want a working LLVM for `AST` analysis or a newer version of `clang`, 
+If you are not planing to get into rabbit hole of compatibility, or you just want a working LLVM for `AST` analysis or a newer version of `clang`, 
 {% highlight console %}
 ~$ spack --debug spec -I llvm @17.0.6 %clang@16.0.6
 ...
@@ -136,4 +136,4 @@ One may still gets errors and crashing in building process, debugging the `spec`
 
 Thank you for reading and stay tuning for next article about **features** and **configurations** with `yaml` files on Spack if you find this article helpful and want find more advanced features of Spack.
 
-- last time edited @29th. Oct. 2023
+- last time edited @7th. Sep. 2024
