@@ -70,7 +70,8 @@ about the package we want to build, but also very detailed `Variants` for the de
 provide `Variants` of dependencies in the same command line of package `Spack` building. In this way, one can achieve very accurate control 
 of the versions, the compiler-in-use and the dependencies of dependencies. For example, this `spec`
 {% highlight console %}
-~$ spack --debug spec -I llvm %clang@16.0.6 flang=true cuda=true cuda_arch=89 ^cuda @11.0.2:12.4.0 %clang@16.0.6
+~$ spack --debug spec -I llvm %clang@16.0.6 flang=true cuda=true cuda_arch=89 \ 
+   ^cuda @11.0.2:12.4.0 %clang@16.0.6
 {% endhighlight %}
 returns 
 {% highlight console %}
@@ -97,10 +98,29 @@ Concretized
 [+]      ^hwloc@2.9.1%gcc@12.2.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~oneapi-level-zero~opencl+pci~rocm build_system=autotools libs=shared,static arch=linux-debian12-haswell
 ...
 {% endhighlight %}
-These information are verbose messages of sources and toolchains resolving for the `spec` I just provided, and information about dependencies which will be reused or installed freshly. Dependencies with `[+]` symbol in front are reused packages from previous Spack installations, while those with `[e]` are fetched from operating system. `cuda` with version `12.4` will be built if installation is launched with this `spec`. 
+These information are verbose messages of sources and toolchains resolving for the `spec` just provided, and information about dependencies which will be reused or installed freshly. Dependencies with `[+]` symbol in front are reused packages from previous Spack installations, while those with `[e]` are fetched from operating system. `cuda` with version `12.4` will be built if installation is launched with this `spec`. 
 
 Option `--debug` is not necessary, but will be helpful when user has to deal with building errors. For developers, it's always good to see more details of processes than playing with black box. `^` in front of `cuda` marks the starting point of `spec`of CUDA building. Anything after this `^` symbol and before next `^` belongs to CUDA building configuration. One could specifies the version of CUDA, and also the compiler-in-use through same specifiers `%` and `@`. 
-`:` in `@12.0.0:17.0.6` of LLVM means any version between `12.0.0` and `17.0.6`, similarly in the `spec` of CUDA, `@11.0.2:12.4.0` means any version between `11.0.2` and `12.4.0`.
+`:` in `@12.0.0:17.0.6` of LLVM `spec` means any version between `12.0.0` and `17.0.6`. Similarly in the `spec` of CUDA, `@11.0.2:12.4.0` means any version between `11.0.2` and `12.4.0`.
 
 This type of practice is absolutely necessary when user has to resolve the compatibility issue between different complex libraries, like here LLVM and CUDA.
-The possible issues may rise from the un-compatible compilers, which different packages require for. Another common source of un-compatible comes from different libraries, few of them may be just simply un-compatible with each others. The command line return from our command shows Spack think LLVM version `14.0.6` has good compatibility with CUDA version `12.4` when they are both built with `Clang 16.0.6`.
+The possible issues may rise from the un-compatible compilers, which different packages require for. Another common source of un-compatibility comes from different libraries, few of them may be just simply un-compatible with each others. The command line return from our command shows Spacks think LLVM version `14.0.6` has good compatibility with CUDA version `12.4` when they are both built with `Clang 16.0.6`.
+
+If you are not planing to get into rabbit hole of compatibility yet, or you just want a working LLVM for `AST` analysis or a newer version of `clang`, 
+{% highlight console%}
+~$ spack --debug spec -I llvm @17.0.6 %clang@16.0.6
+{% endhighlight %}
+will show what you need to know before building. Variant `cuda` is default be `false` and variant `targets` is default be `x86`.
+If you are satisfied, then run
+{% highlight console%}
+~$ spack install -j4 --verbose llvm @17.0.6 %clang@16.0.6
+{% endhighlight %}
+to kick off the building with parallel compilations of for threads and building details i.e., `verbose`. Spack automatically supports parallel building for 
+packages using `CMake` or `make`. The number of parallel CPU threads is `16` if the hardware has these resource. However, this number can always be overridden
+by explicitly requiring `-j N`, which N is 4 in our example. For an old Intel 4th generation `i5-4300U` CPU, this building takes about two hours. In contract,
+This time is about 25 minites on AMD `Zen3 EPYC 7003` CPU, on which sixteen threads are automatically launched.
+
+One may still gets errors and crashing in building process, debugging the `spec` you provided is necessary if this unfortunately happened. 
+Stilling tuning for next article about **features** and **configurations** on Spack if you find this article helpful and want find more advanced features of Spack.
+
+- last time edited @29th. Oct. 2023
