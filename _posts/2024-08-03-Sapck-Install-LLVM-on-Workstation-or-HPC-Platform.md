@@ -106,21 +106,25 @@ Option `--debug` is not necessary, but will be helpful when user has to deal wit
 This type of practice is absolutely necessary when user has to resolve the compatibility issue between different complex libraries, like here LLVM and CUDA.
 The possible issues may rise from the un-compatible compilers, which different packages require for. Another common source of un-compatibility comes from different libraries, few of them may be just simply un-compatible with each others. The command line return from our command shows Spacks think LLVM version `14.0.6` has good compatibility with CUDA version `12.4` when they are both built with `Clang 16.0.6`.
 
-If you are not planing to get into rabbit hole of compatibility yet, or you just want a working LLVM for `AST` analysis or a newer version of `clang`, 
+At this stage, we have gathered all the knowledge for us to really build LLVM with CUDA support. If you are satisfied, then run
 {% highlight console%}
-~$ spack --debug spec -I llvm @17.0.6 %clang@16.0.6
-{% endhighlight %}
-will show what you need to know before building. Variant `cuda` is default be `false` and variant `targets` is default be `x86`.
-If you are satisfied, then run
-{% highlight console%}
-~$ spack install -j4 --verbose llvm @17.0.6 %clang@16.0.6
+~$ spack install -j4 --verbose llvm %clang@16.0.6 flang=true cuda=true cuda_arch=89 \ 
+   ^cuda @11.0.2:12.4.0 %clang@16.0.6
 {% endhighlight %}
 to kick off the building with parallel compilations of for threads and building details i.e., `verbose`. Spack automatically supports parallel building for 
 packages using `CMake` or `make`. The number of parallel CPU threads is `16` if the hardware has these resource. However, this number can always be overridden
-by explicitly requiring `-j N`, which N is 4 in our example. For an old Intel 4th generation `i5-4300U` CPU, this building takes about two hours. In contract,
-This time is about 25 minites on AMD `Zen3 EPYC 7003` CPU, on which sixteen threads are automatically launched.
+by explicitly requiring `-j N`, which N is 4 in our example.
+
+If you are not planing to get into rabbit hole of compatibility yet, or you just want a working LLVM for `AST` analysis or a newer version of `clang`, 
+{% highlight console%}
+~$ spack --debug spec -I llvm @17.0.6 %clang@16.0.6
+...
+~$ spack install -j4 --verbose llvm @17.0.6 %clang@16.0.6
+{% endhighlight %}
+will show what you need to know before building similar with we have seen before. And then launch the building. Variant `cuda` is default be `false` and variant `targets` is default be `x86` in this `spec`. For an old Intel 4th generation `i5-4300U` CPU, this building takes about two hours. In contract,
+This time is about 25 minutes on AMD `Zen3 EPYC 7003` CPU, thanks for the sixteen threads are automatically launched.
 
 One may still gets errors and crashing in building process, debugging the `spec` you provided is necessary if this unfortunately happened. 
-Stilling tuning for next article about **features** and **configurations** on Spack if you find this article helpful and want find more advanced features of Spack.
+Stay tuning for next article about **features** and **configurations** on Spack if you find this article helpful and want find more advanced features of Spack.
 
 - last time edited @29th. Oct. 2023
