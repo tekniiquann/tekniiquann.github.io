@@ -45,14 +45,62 @@ We can see the default building configuration system is [CMake](https://cmake.or
 
 Next, let's prepare the building by checking out what's Spack going to do, or what dependencies Spack plans to build and install. In Spack lingo, we should check out `spec` to get these information before kicking off the installations.
 {% highlight console %} 
-~$ spack spec -I llvm @17.0.6 %gcc@12.2.0
+~$ spack spec -I llvm @17.0.6 %clang@16.0.6
 {% endhighlight %}
 `%` is the symbol for making out compiler-to-use for building on operating system. While `@` symbol marks out the version of every library or tool involved. `@17.0.6` is version of LLVM I want to build in this example, and `@12.2.0` marks the version of `gcc` I wish Spack to use. Compiler with given version must be executable on living system. Try to run
 {% highlight console %}
-~$ spack compilers find 
+~$ spack compilers list 
 {% endhighlight %}
-to see what compilers have been detected by Spack on operating system.
+to see what compilers have been detected by Spack on operating system. This command returns following contents
+{% highlight console %}
+==> Available compilers
+-- clang debian12-x86_64 ----------------------------------------
+clang@16.0.6  clang@15.0.6  clang@14.0.6  clang@13.0.1
+
+-- gcc debian12-x86_64 ------------------------------------------
+{% endhighlight %}
+on `Debian 12`, in which `clang 13-16` and `gcc 12` are available and have successively detected by Spack.
 If one wants to build `flang`, just assign `true` to `flang` after compiler specifier 
 {% highlight console %} 
-~$ spack spec -I llvm @17.0.6 %gcc@12.2.0 flang=ture
+~$ spack spec -I llvm @17.0.6 %clang@16.0.6 flang=true
 {% endhighlight %}
+
+Now, let's take getting a little deeper into advance features of `spec`. We can write `spec` with very detailed information not only
+about the package we want to build, but also very detailed `Variants` for the dependencies. Same with `Variants` of targeted package, one can
+provide `Variants` of dependencies in the same command line of package `Spack` building. In this way, one can achieve very accurate control 
+of the versions, the compiler-in-use and the dependencies of dependencies. For example, this `spec`
+{% highlight console %}
+~$ spack --debug spec -I llvm %clang@16.0.6 flang=true cuda=true cuda_arch=89 ^cuda @11.0.2:12.4.0 %clang@16.0.6
+{% endhighlight %}
+returns 
+{% highlight console %}
+==> [2024-09-07-14:15:09.661897] '/usr/bin/clang-15' '-v' '/tmp/spack-implicit-link-info7jtqx34t/main.c' '-o' '/tmp/spack-implicit-link-info7jtqx34t/output'
+...
+Input spec
+--------------------------------
+ -   llvm%clang@16.0.6+cuda+flang cuda_arch=89
+ -       ^cuda@11.0.2:12.4.0%clang@16.0.6
+
+Concretized
+--------------------------------
+ -   llvm@14.0.6%clang@16.0.6+clang+cuda+flang+gold~ipo+libomptarget~libomptarget_debug~link_llvm_dylib+lld+lldb+llvm_dylib+lua~mlir+polly~python~split_dwarf~z3 build_system=cmake build_type=Release compiler-rt=runtime cuda_arch=89 generator=ninja libcxx=runtime libunwind=runtime openmp=runtime patches=1f42874,25bc503,6379168,8248141,b216cff,cb8e645 shlib_symbol_version=none targets=all version_suffix=none arch=linux-debian12-haswell
+[+]      ^binutils@2.42%gcc@12.2.0~gas+gold~gprofng+headers~interwork+ld~libiberty~lto~nls~pgo+plugins build_system=autotools compress_debug_sections=zlib libs=shared,static arch=linux-debian12-haswell
+[+]          ^diffutils@3.10%gcc@12.2.0 build_system=autotools arch=linux-debian12-haswell
+...
+[+]          ^curl@8.7.1%gcc@12.2.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs=shared,static tls=openssl arch=linux-debian12-haswell
+[+]              ^nghttp2@1.57.0%gcc@12.2.0 build_system=autotools arch=linux-debian12-haswell
+ -       ^cuda@12.4.0%clang@16.0.6~allow-unsupported-compilers~dev build_system=generic arch=linux-debian12-haswell
+ -       ^elfutils@0.190%clang@16.0.6~debuginfod+exeprefix+nls build_system=autotools arch=linux-debian12-haswell
+[+]          ^bzip2@1.0.8%gcc@12.2.0~debug~pic+shared build_system=generic arch=linux-debian12-haswell
+...
+[e]      ^glibc@2.36%gcc@12.2.0 build_system=autotools arch=linux-debian12-haswell
+[+]      ^hwloc@2.9.1%gcc@12.2.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~oneapi-level-zero~opencl+pci~rocm build_system=autotools libs=shared,static arch=linux-debian12-haswell
+...
+{% endhighlight %}
+These information are verbose messages of sources and toolchains resolving for the `spec` I just provided, and information about dependencies which will be reused or installed freshly. Dependencies with `[+]` symbol in front are reused packages from previous Spack installations, while those with `[e]` are fetched from operating system. `cuda` with version `12.4` will be built if installation is launched with this `spec`. 
+
+Option `--debug` is not necessary, but will be helpful when user has to deal with building errors. For developers, it's always good to see more details of processes than playing with black box. `^` in front of `cuda` marks the starting point of `spec`of CUDA building. Anything after this `^` symbol and before next `^` belongs to CUDA building configuration. One could specifies the version of CUDA, and also the compiler-in-use through same specifiers `%` and `@`. 
+`:` in `@12.0.0:17.0.6` of LLVM means any version between `12.0.0` and `17.0.6`, similarly in the `spec` of CUDA, `@11.0.2:12.4.0` means any version between `11.0.2` and `12.4.0`.
+
+This type of practice is absolutely necessary when user has to resolve the compatibility issue between different complex libraries, like here LLVM and CUDA.
+The possible issues may rise from the un-compatible compilers, which different packages require for. Another common source of un-compatible comes from different libraries, few of them may be just simply un-compatible with each others. The command line return from our command shows Spack think LLVM version `14.0.6` has good compatibility with CUDA version `12.4` when they are both built with `Clang 16.0.6`.
