@@ -8,6 +8,8 @@ type: "publication"
 
 [Spack](https://spack.io/), the supercomputer tool for HPC libraries and dependencies building, has been around quite a while in HPC community and almost appear on any big machine. It offers extremely comprehensive control of package building, such as the versions of target package, versions of dependencies of target package, compilers and their version. 
 
+<img src="/pictures/llvm-spack.png" alt="centered image" width="400" height="auto"> 
+
 One of many significant features, which make Spack such handy tool for resolving HPC toolchains, is building configurations. [Spec variants](https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies) are the kernel concepts of this feature. `Spec variants` of spack package cover mostly the building configuration flags of [CMake](https://cmake.org/) or [Make](https://en.wikipedia.org/wiki/Make_(software)), the compiler flags and the linker flags. They are the ports of building configuration of softwares.
 
 Beside appearing frequently on cluster of supercomputing nodes, Spack also works well on workstations and laptops. This makes deployment, managements and usages of HPC toolchains much more easier than it's used to be. For HPC developers, making this task easy is really life enjoyment. 
