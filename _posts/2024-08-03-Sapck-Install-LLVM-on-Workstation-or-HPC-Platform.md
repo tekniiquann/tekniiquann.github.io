@@ -6,7 +6,9 @@ meta: "shell_and_OS"
 type: "Draft"
 ---
 
-[LLVM project](https://llvm.org), started by [Chris Lattner](https://en.wikipedia.org/wiki/Chris_Lattner) at 21 years ago, has been evolved to ubiquitous corner stone of almost any modern projects. Popular languages [Rust](https://www.rust-lang.org) and [Julia](https://julialang.org),  which feature different capabilities, are both heavily depend on LLVM for syntax analysis or binary generations (optimizations). However, getting our blue wyvern flying sometime needs a little bit more efforts, compiling and building LLVM from source is not same level task of a `apt install llvm`. 
+[LLVM project](https://llvm.org), started by [Chris Lattner](https://en.wikipedia.org/wiki/Chris_Lattner) at 21 years ago, has been evolved to ubiquitous corner stone of almost any modern projects. Popular languages [Rust](https://www.rust-lang.org) and [Julia](https://julialang.org), which feature different capabilities, are both heavily depend on LLVM for syntax analysis or binary generations (optimizations). However, getting our blue wyvern flying sometime needs a little bit more efforts, compiling and building LLVM from source is not same level task of a `apt install llvm`. 
+
+<img src="/pictures/llvm-spack.png" alt="centered image" width="1500" height="auto"> 
 
 The problem gets seriously worse when it comes to supercomputer or cluster platforms, because these platforms usually have fixed number allocations of files in project folders. As a result, pulling source tree of LLVM into project folders is likely imposable thanks for its 180000+ files. Developers always found themselves have no way to conduct a source building of LLVM though they could get this job done on their workstation. It will be very helpful if an universal building system could provide a routine to properly fetch the source tree of LLVM, and could be even better if this building system offers detailed building configurations. Here, come to **Spack**. 
 
