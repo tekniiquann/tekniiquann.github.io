@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Use Spack Build and Install LLVM on Workstation or Supercomputer"
-categories_short_name: shell
+categories_short_name: cc++_compilers
 meta: "shell_and_OS"
-type: "Draft"
+type: "publication"
 ---
 
 [LLVM project](https://llvm.org), started by [Chris Lattner](https://en.wikipedia.org/wiki/Chris_Lattner) at 21 years ago, has been evolved to ubiquitous corner stone of almost any modern projects. Popular languages [Rust](https://www.rust-lang.org) and [Julia](https://julialang.org), which feature different capabilities, are both heavily depend on LLVM for syntax analysis or binary generations (optimizations). However, getting our blue wyvern flying sometime needs a little bit more efforts, compiling and building LLVM from source is not same level task of a `apt install llvm`. 
