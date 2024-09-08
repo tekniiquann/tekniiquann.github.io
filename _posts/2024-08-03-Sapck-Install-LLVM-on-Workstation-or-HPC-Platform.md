@@ -13,8 +13,8 @@ type: "publication"
 The problem gets seriously worse when it comes to supercomputer or cluster platforms, because these platforms usually have fixed number allocations of files in project folders. As a result, pulling source tree of LLVM into project folders is likely imposable thanks for its 180000+ files. Developers always found themselves have no way to conduct a source building of LLVM though they could get this job done on their workstation. It will be very helpful if an universal building system could provide a routine to properly fetch the source tree of LLVM, and could be even better if this building system offers detailed building configurations. Here, come to **Spack**. 
 
 As been talked in my last article 
-(<a href="{{ "/2024/07/03/Install-Spack-The-HPC-Package-Manager.html" | absolute_url }}">
-How To Install and Configure Spack -- The HPC Package Manager
+(<a href="{{ "/2024/07/03/Install-Spack-The-HPC-Package-Manager-and-Configure-its-Shell-Environment.html" | absolute_url }}">
+Install Spack The HPC Package Manager and Configure its Shell Environment
 </a>), 
 Spack is designed to resolve this type of dependencies and toolchains building problem on multiple platforms. Though it totally doable to build up LLVM by following its [documentations](https://llvm.org/docs/GettingStarted.html#getting-the-source-code-and-building-llvm) and configuring the CMake, it's still **way more easier** for most users to just use the almost automated building tool. In this article, I will go through how to use Spack to easily and correctly build and install LLVM.
 
