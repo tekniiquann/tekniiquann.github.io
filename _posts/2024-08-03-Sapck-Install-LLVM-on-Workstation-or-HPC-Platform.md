@@ -6,7 +6,7 @@ meta: "shell_and_OS"
 type: "publication"
 ---
 
-[LLVM project](https://llvm.org), started by [Chris Lattner](https://en.wikipedia.org/wiki/Chris_Lattner) at 21 years ago, has been evolved to ubiquitous corner stone of almost any modern projects. Popular languages [Rust](https://www.rust-lang.org) and [Julia](https://julialang.org), which feature different capabilities, are both heavily depend on LLVM for syntax analysis or binary generations (optimizations). However, getting our blue wyvern flying sometime needs a little bit more efforts, compiling and building LLVM from source is not same level task of a `apt install llvm`. 
+[LLVM project](https://llvm.org), started by [Chris Lattner](https://en.wikipedia.org/wiki/Chris_Lattner) at 21 years ago, has been evolved to ubiquitous corner stone of almost any modern projects. Popular languages [Rust](https://www.rust-lang.org) and [Julia](https://julialang.org), which feature different capabilities, both heavily depend on LLVM for syntax analysis or binary generations (optimizations). However, getting our blue wyvern flying sometime needs a little bit more efforts, compiling and building LLVM from source is not same level task of a `apt install llvm`. 
 
 <img src="/pictures/llvm-spack.png" alt="centered image" width="800" height="auto"> 
 
