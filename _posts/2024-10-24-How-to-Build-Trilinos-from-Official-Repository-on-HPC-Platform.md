@@ -3,7 +3,7 @@ layout: post
 title: "How to Build Trilinos from Official Repository on HPC Platform"
 categories_short_name: cc++_compilers
 meta: "shell_and_OS"
-type: "publication"
+type: "Draft"
 ---
 
 {% highlight console %}
