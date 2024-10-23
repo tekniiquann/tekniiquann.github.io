@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Build Trilinos from Official Repository on HPC Platform"
+title: "How to Build Trilinos from Official Repository on HPC Platform"
 categories_short_name: cc++_compilers
 meta: "shell_and_OS"
 type: "Draft"
@@ -19,8 +19,9 @@ Install Spack The HPC Package Manager and Configure its Shell Environment
 Spack is designed to resolve this type of dependencies and toolchains building problem on multiple platforms. Though it totally doable to build up LLVM by following its [documentations](https://llvm.org/docs/GettingStarted.html#getting-the-source-code-and-building-llvm) and configuring the CMake, it's still **way more easier** for most users to just use the almost automated building tool. In this article, I will go through how to use Spack to easily and correctly build and install LLVM.
 
 First, let's fetch installation and configuration information of LLVM. Different version of Spack releases provide different available version of LLVM, so do other packages. Generally speaking, the newer Spack is, the newer the packages it can offers. For example, Spack `release/v0.22` provides `llvm 18.0.x` installation, while Spack `release/v0.20` only up to `llvm 16.0.x`.
+
 {% highlight console %}
-cmake  -DCMAKE_CXX_STANDARD=14 \
+~$ cmake  -DCMAKE_CXX_STANDARD=14 \
        -DCMAKE_C_COMPILER=cc \
        -DCMAKE_CXX_COMPILER=CC \
        -DCMAKE_Fortran_COMPILER=ftn \
