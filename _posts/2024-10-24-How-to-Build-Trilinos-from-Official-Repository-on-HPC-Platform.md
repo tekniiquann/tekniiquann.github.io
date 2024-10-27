@@ -7,10 +7,12 @@ type: "Draft"
 ---
 
 {% highlight console %}
-~$ cmake  -DCMAKE_CXX_STANDARD=14 \
-       -DCMAKE_C_COMPILER=cc \
-       -DCMAKE_CXX_COMPILER=CC \
+~$ cmake  -DCMAKE_CXX_STANDARD=14    \
+       -DCMAKE_C_COMPILER=cc      \
+       -DCMAKE_CXX_COMPILER=CC    \
        -DCMAKE_Fortran_COMPILER=ftn \
+       -DCMAKE_BUILD_TYPE=RELEASE \
+       -DCMAKE_CXX_FLAGS="-g" \
        -DTrilinos_ENABLE_Xpetra=ON \
        -DTrilinos_ENABLE_Amesos=ON \
        -DTrilinos_ENABLE_Epetra=ON \
@@ -23,18 +25,21 @@ type: "Draft"
        -DTrilinos_ENABLE_Kokkos=ON \
        -DTrilinos_ENABLE_MueLu=OFF \
        -DTrilinos_ENABLE_ML=ON \
-       -DTrilinos_ENABLE_ROL=OFF \
+       -DTrilinos_ENABLE_NOX=OFF \
+       -DTrilinos_ENABLE_ROL=OFF\
        -DTrilinos_ENABLE_Tpetra=ON \
        -DTrilinos_ENABLE_COMPLEX_DOUBLE=OFF \
        -DTrilinos_ENABLE_COMPLEX_FLOAT=OFF \
        -DTrilinos_ENABLE_Zoltan=ON \
+       -DTrilinos_ENABLE_Zoltan2=OFF \
        -DTrilinos_VERBOSE_CONFIGURE=OFF \
+       -DTPL_ENABLE_Boost=OFF \
        -DTPL_ENABLE_MPI=ON \
        -DBUILD_SHARED_LIBS=ON \
        -DCMAKE_VERBOSE_MAKEFILE=ON \
        -DCMAKE_BUILD_TYPE=RELEASE \
-       -DTPL_ENABLE_BLAS=ON  -DBLAS_LIBRARY_DIRS=/projappl/project_462000604/libs/TPL-BLAS \
-       -DTPL_ENABLE_LAPACK=ON -DLAPACK_LIBRARY_DIRS=/projappl/project_462000604/libs/TPL-BLAS \
+       -DTPL_ENABLE_BLAS=ON  -DBLAS_LIBRARY_DIRS=/projappl/project_xxxxxxxx/libs/lapack \
+       -DTPL_ENABLE_LAPACK=ON -DLAPACK_LIBRARY_DIRS=/projappl/project_xxxxxxxx/libs/lapack \
        -DTPL_ENABLE_Netcdf=OFF \
-       -DCMAKE_INSTALL_PREFIX:PATH=/projappl/project_462000604/libs/Trilinos ../Trilinos-git
+       -DCMAKE_INSTALL_PREFIX:PATH=/projappl/project_xxxxxxxxx/libs/Trilinos ../Trilinos-git
 {% endhighlight %}
