@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Build LAPACK from Official Repository on HPC Platform"
+title: "Build p4est from Official Repository on HPC Platform"
 categories_short_name: cc++_compilers
 meta: "shell_and_OS"
 type: "Draft"
