@@ -10,19 +10,24 @@ such as [ADIOS 2](https://adios2.readthedocs.io/en/latest/index.html), [ParaView
 Ascent is known for easy deploying. This short blog documents how to build and link Ascent on AMD system.  
 
 ### MPI Only
-Ascent project provides a nice shell script to handle dependencies fetch and building under `scripts/build_ascent`, 
-building MPI only library is as easy as passing parallel compiler warpers to `build_ascent.sh` script. 
+Ascent project provides a nice shell script to handle dependencies fetch and building automation. 
+The script is under `scripts/build_ascent`, together with many other scripts working for specific HPC systems. 
+building MPI only Ascent library is as easy as passing parallel compiler warpers to `build_ascent.sh` script. 
+Before doing this, one should load necessary modules for `MPI`, `GCC/Clang` and `CMake`.
 {% highlight console %}
-~$ module --force purge && module --force unload LUMI && module load LUMI/24.03 partition/C cpeGNU/24.03                         
+~$ module --force purge && module --force unload PENV 
+~$ module load PENV/xx.yy partition-info CompilerSuite/xx.yy BuildTools/xx.yy                         
 {% endhighlight %}
-
-There are lot of bugs on camp MEM for ascent dependencies, I have to manually add the missing headers.
- And few necessary modifications were done on build_ascent.sh to fetch v0.9.0 with all submodules, better document.
- just run this script in a empty folder, it will fetch all source codes:
-
+Supposing `cc`, `C` and `ftn` are warpers of C, C++ and Fortran with MPI,
+the following command will pass them to building script.
 {% highlight console %}
-~$ env CC=cc CXX=CC FTN=ftn ./build_ascent-v0.9.0.sh
-{% endhighlight %}
+~$ env CC=cc CXX=CC FTN=ftn ./build_ascent-v0.9.x.sh
+{% endhighlight %} 
+
+There are lot of bugs on `camp` and `FMEM` for Ascent dependencies, I have to manually add the missing headers when I did first time building. And few necessary modifications were done on build_ascent.sh to fetch v0.9.x with all submodules.
+After communicating with Ascent's maintainer on these issues, I was provided a list of compatible dependencies 
+
+
 
 ### ROCm-aware MPI
 
