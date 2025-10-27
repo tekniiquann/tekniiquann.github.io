@@ -24,10 +24,9 @@ the following command will pass them to building script.
 ~$ env CC=cc CXX=CC FTN=ftn ./build_ascent-v0.9.x.sh
 {% endhighlight %} 
 
-There are lot of bugs on `camp` and `FMEM` for Ascent dependencies, I have to manually add the missing headers when I did first time building. And few necessary modifications were done on build_ascent.sh to fetch v0.9.x with all submodules.
-After communicating with Ascent's maintainer on these issues, I was provided a list of compatible dependencies 
-
-
+There are some bugs on `camp` and `FMEM` for Ascent dependencies in `v0.9.1-v0.9.2`, one has to manually add the missing headers when errors occur during compilation. And few necessary modifications were done on `build_ascent.sh` to fetch v0.9.x with all submodules. As one can find in building scripts of some well known Cray-AMD supercomputers, `enable_mpi` should be `OFF`, while `enable_find_mpi` should be `ON` after mpi module is loaded. 
 
 ### ROCm-aware MPI
+
+### Link and Troubleshooting  
 
